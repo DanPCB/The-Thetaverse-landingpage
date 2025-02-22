@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
+
 <head>
+  {
+  scroll-behavior: smooth;
+}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thetaverse | Decentralized AI AGI</title>
   <style>
     /* Global Styles */
@@ -12,9 +16,6 @@
       background-color: #121212;
       color: #f5f5f5;
       line-height: 1.6;
-    }
-    html {
-      scroll-behavior: smooth;
     }
     a {
       color: #ff6f61;
@@ -60,24 +61,51 @@
       margin: 0 auto 2rem auto;
       font-size: 1.1rem;
     }
-    /* Subscription Form Styles */
-    #subscribe form {
-      max-width: 400px;
+    /* Video Section */
+    .video-section {
+      background: #000;
+      padding: 2rem 0;
+    }
+    .video-container {
+      max-width: 800px;
       margin: 0 auto;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
     }
-    #subscribe input[type="email"] {
-      width: 80%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 5px;
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
-    #subscribe button.cta {
-      width: 85%;
+    /* Testimonials Section */
+    .testimonials {
+      background: #1e1e1e;
+      padding: 3rem 2rem;
     }
-    /* Footer */
+    .testimonial {
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .testimonial span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ff6f61;
+    }
     footer {
       font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      section h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -91,21 +119,53 @@
   <section>
     <h2>Welcome to Thetaverse</h2>
     <p>
-      Harness the power of decentralized resources and AI to create a self-developing AGI that evolves autonomously—paving the way for a sustainable future.
+      Harness the power of decentralized resources and AI to create a self-developing AGI that learns, adapts, and evolves autonomously—paving the way for a sustainable future beyond human limitations.
     </p>
-    <!-- Updated CTA linking to the subscription form -->
-    <a href="#subscribe" class="cta">Join the Revolution</a>
+    <button class="cta">Join the Revolution</button>
+  <section class="video-section">
+  <h2>Discover Thetaverse</h2>
+  <div class="video-container">
+    <!-- Use the relative path to your uploaded video file -->
+    <video controls width="100%" poster="thumbnail.jpg">
+      <source src="intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Community Says</h2>
+    <div class="testimonial">
+      <p>"Thetaverse is revolutionizing the way we think about AI and decentralization. It’s the future of technology!"</p>
+      <span>- Alex, AI Researcher</span>
+    </div>
+    <div class="testimonial">
+      <p>"A groundbreaking project that combines AI and blockchain in a way that truly empowers individuals."</p>
+      <span>- Jordan, Blockchain Enthusiast</span>
+    </div>
+    <div class="testimonial">
+      <p>"I believe Thetaverse will be the catalyst for a new era of self-evolving AGI. Simply amazing!"</p>
+      <span>- Casey, Tech Innovator</span>
+    </div>
   </section>
 
-  <!-- Subscription Form Section -->
-  <section id="subscribe">
-    <h2>Subscribe to Thetaverse Updates</h2>
-    <p>Stay informed about our decentralized AI revolution!</p>
-    <form id="subscription-form" action="https://your-server-endpoint.com/subscribe" method="post">
-      <input type="email" name="email" placeholder="Your email address" required>
-      <button type="submit" class="cta">Subscribe Now</button>
-    </form>
+  <!-- Call to Action Section -->
+  <section>
+    <h2>Be Part of the Future</h2>
+    <p>
+      Join us in building Thetaverse—a decentralized AI ecosystem that evolves, innovates, and leads the way to a sustainable, intelligent future.
+    </p>
+    <a href="#subscribe" class="cta">Join the Revolution</a>
   </section>
+    <section id="subscribe">
+  <h2>Subscribe to Thetaverse Updates</h2>
+  <p>Stay informed about our decentralized AI revolution!</p>
+  <form id="subscription-form" action="https://your-server-endpoint.com/subscribe" method="post">
+    <input type="email" name="email" placeholder="Your email address" required>
+    <button type="submit" class="cta">Subscribe Now</button>
+  </form>
+</section>
+
 
   <footer>
     <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
