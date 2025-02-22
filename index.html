@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"> 
-
+<html lang="en">
 <head>
-  {
-  scroll-behavior: smooth;
-}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Thetaverse: Decentralized AI AGI. Join our revolution and subscribe for updates.">
   <title>Thetaverse | Decentralized AI AGI</title>
   <style>
     /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -28,11 +28,33 @@
     }
     header h1 {
       font-size: 3rem;
-      margin: 0;
+      margin: 0.5rem 0;
     }
     header p {
       font-size: 1.2rem;
       color: #aaa;
+    }
+    /* Navigation */
+    nav {
+      margin-bottom: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 1rem;
+    }
+    nav ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    nav ul li a:hover {
+      color: #ff6f61;
     }
     .cta {
       background: #ff6f61;
@@ -62,7 +84,7 @@
       font-size: 1.1rem;
     }
     /* Video Section */
-    .video-section {
+    #video {
       background: #000;
       padding: 2rem 0;
     }
@@ -82,7 +104,7 @@
       height: 100%;
     }
     /* Testimonials Section */
-    .testimonials {
+    #testimonials {
       background: #1e1e1e;
       padding: 3rem 2rem;
     }
@@ -99,77 +121,7 @@
     footer {
       font-size: 0.9rem;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      section h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Thetaverse</h1>
-    <p>Decentralized AI System for a Self-Evolving AGI</p>
-  </header>
-
-  <!-- Introduction Section -->
-  <section>
-    <h2>Welcome to Thetaverse</h2>
-    <p>
-      Harness the power of decentralized resources and AI to create a self-developing AGI that learns, adapts, and evolves autonomously—paving the way for a sustainable future beyond human limitations.
-    </p>
-    <button class="cta">Join the Revolution</button>
-  <section class="video-section">
-  <h2>Discover Thetaverse</h2>
-  <div class="video-container">
-    <!-- Use the relative path to your uploaded video file -->
-    <video controls width="100%" poster="thumbnail.jpg">
-      <source src="intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</section>
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Community Says</h2>
-    <div class="testimonial">
-      <p>"Thetaverse is revolutionizing the way we think about AI and decentralization. It’s the future of technology!"</p>
-      <span>- Alex, AI Researcher</span>
-    </div>
-    <div class="testimonial">
-      <p>"A groundbreaking project that combines AI and blockchain in a way that truly empowers individuals."</p>
-      <span>- Jordan, Blockchain Enthusiast</span>
-    </div>
-    <div class="testimonial">
-      <p>"I believe Thetaverse will be the catalyst for a new era of self-evolving AGI. Simply amazing!"</p>
-      <span>- Casey, Tech Innovator</span>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section>
-    <h2>Be Part of the Future</h2>
-    <p>
-      Join us in building Thetaverse—a decentralized AI ecosystem that evolves, innovates, and leads the way to a sustainable, intelligent future.
-    </p>
-    <a href="#subscribe" class="cta">Join the Revolution</a>
-  <section id="subscribe">
-  <h2>Subscribe to Thetaverse Updates</h2>
-  <p>Stay informed about our decentralized AI revolution!</p>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thetaverse Subscription Form</title>
-  <style>
-    body {
-      background-color: #121212;
-      font-family: Arial, sans-serif;
-      color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
+    /* Subscription Section */
     #subscribe {
       background-color: #1e1e1e;
       padding: 40px 20px;
@@ -216,9 +168,81 @@
       margin-top: 20px;
       font-size: 1.1rem;
     }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      section h2 {
+        font-size: 2rem;
+      }
+      nav ul li {
+        margin: 0 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#video">Discover</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#cta">Join</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+    <h1>Thetaverse</h1>
+    <p>Decentralized AI System for a Self-Evolving AGI</p>
+  </header>
+
+  <!-- Introduction Section -->
+  <section id="intro">
+    <h2>Welcome to Thetaverse</h2>
+    <p>
+      Harness the power of decentralized resources and AI to create a self-developing AGI that learns, adapts, and evolves autonomously—paving the way for a sustainable future beyond human limitations.
+    </p>
+    <button class="cta" onclick="document.getElementById('subscribe').scrollIntoView();">Join the Revolution</button>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video" class="video-section">
+    <h2>Discover Thetaverse</h2>
+    <div class="video-container">
+      <video controls width="100%" poster="thumbnail.jpg">
+        <source src="intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Community Says</h2>
+    <div class="testimonial">
+      <p>"Thetaverse is revolutionizing the way we think about AI and decentralization. It’s the future of technology!"</p>
+      <span>- Alex, AI Researcher</span>
+    </div>
+    <div class="testimonial">
+      <p>"A groundbreaking project that combines AI and blockchain in a way that truly empowers individuals."</p>
+      <span>- Jordan, Blockchain Enthusiast</span>
+    </div>
+    <div class="testimonial">
+      <p>"I believe Thetaverse will be the catalyst for a new era of self-evolving AGI. Simply amazing!"</p>
+      <span>- Casey, Tech Innovator</span>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta">
+    <h2>Be Part of the Future</h2>
+    <p>
+      Join us in building Thetaverse—a decentralized AI ecosystem that evolves, innovates, and leads the way to a sustainable, intelligent future.
+    </p>
+    <a href="#subscribe" class="cta">Join the Revolution</a>
+  </section>
+
+  <!-- Subscription Section -->
   <section id="subscribe">
     <h2>Subscribe to Thetaverse Updates</h2>
     <p>Stay informed about our decentralized AI revolution!</p>
@@ -231,6 +255,10 @@
     <div id="response-message"></div>
   </section>
 
+  <footer>
+    <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
+  </footer>
+
   <script>
     // Wait until the DOM content is fully loaded
     document.addEventListener("DOMContentLoaded", function() {
@@ -239,7 +267,7 @@
 
       // Listen for form submission
       form.addEventListener('submit', async function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Prevent default submission
 
         // Get input values from the form
         const name = form.name.value;
@@ -271,57 +299,5 @@
       });
     });
   </script>
-  <!-- Container for displaying the response message -->
-  <div id="response-message" style="margin-top:1rem; font-size: 1.1rem;"></div>
-</section>
-
-
-
-
-  <footer>
-    <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
-  </footer>
-    <script>
-  // Wait until the DOM content is fully loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('subscription-form');
-    const responseMessage = document.getElementById('response-message');
-
-    // Listen for form submission
-    form.addEventListener('submit', async function(event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      // Get the input values from the form
-      const name = form.name.value;
-      const email = form.email.value;
-      const phone = form.phone.value;
-      
-      // Display a loading message
-      responseMessage.innerText = 'Submitting your subscription...';
-
-      try {
-        // Send a POST request to the Netlify function endpoint with all fields
-        const response = await fetch(form.action, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ name, email, phone })
-        });
-
-        // Parse the JSON response
-        const data = await response.json();
-
-        // Display the response message to the user
-        responseMessage.innerText = data.message || 'Subscription successful!';
-      } catch (error) {
-        console.error('Error:', error);
-        responseMessage.innerText = 'An error occurred. Please try again later.';
-      }
-    });
-  });
-</script>
-
-
 </body>
 </html>
