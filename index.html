@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Thetaverse: Decentralized AI AGI. Join our revolution and subscribe for updates.">
   <title>Thetaverse | Decentralized AI AGI</title>
   <style>
     /* Global Styles */
@@ -14,49 +13,24 @@
       color: #f5f5f5;
       line-height: 1.6;
     }
-    a {
-      color: #ff6f61;
-      text-decoration: none;
-    }
+    a { color: #ff6f61; text-decoration: none; }
     header, footer {
       background: #1e1e1e;
       text-align: center;
       padding: 2rem 1rem;
     }
-    header h1 {
-  background: #1e1e1e;
-  text-align: center;
-  padding: 2rem 1rem;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* Ensures it stays on top of other content */
-}
-    header p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
+    header h1 { font-size: 3rem; margin: 0.5rem 0; }
+    header p { font-size: 1.2rem; color: #aaa; }
     /* Navigation */
-    nav {
-      margin-bottom: 1rem;
-    }
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      margin: 0;
       padding: 0;
+      margin: 0 0 1rem 0;
     }
-    nav ul li {
-      margin: 0 1rem;
-    }
-    nav ul li a {
-      color: #f5f5f5;
-      font-size: 1rem;
-    }
-    nav ul li a:hover {
-      color: #ff6f61;
-    }
+    nav ul li { margin: 0 1rem; }
+    nav ul li a { font-size: 1rem; }
     .cta {
       background: #ff6f61;
       color: #fff;
@@ -68,27 +42,13 @@
       margin-top: 1rem;
       transition: background 0.3s ease;
     }
-    .cta:hover {
-      background: #e65c50;
-    }
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    section p {
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
-      font-size: 1.1rem;
-    }
+    .cta:hover { background: #e65c50; }
+    section { padding: 4rem 2rem; text-align: center; }
+    section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    section p { max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; }
+
     /* Video Section */
-    #video {
-      background: #000;
-      padding: 2rem 0;
-    }
+    #video { background: #000; padding: 2rem 0; }
     .video-container {
       max-width: 800px;
       margin: 0 auto;
@@ -99,87 +59,11 @@
     .video-container iframe,
     .video-container video {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
     }
-    
-    }
-    /* Testimonials Section */
-    #testimonials {
-      background: #1e1e1e;
-      padding: 3rem 2rem;
-    }
-    .testimonial {
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    .testimonial span {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #ff6f61;
-    }
-    /* Subscription Section */
-    #subscribe {
-      background-color: #1e1e1e;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    #subscribe h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    #subscribe p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    #subscription-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    #subscription-form input {
-      width: 80%;
-      max-width: 400px;
-      padding: 10px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    #subscription-form button {
-      width: 85%;
-      max-width: 400px;
-      padding: 10px;
-      font-size: 1rem;
-      background-color: #ff6f61;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    #subscription-form button:hover {
-      background-color: #e65c50;
-    }
-    #response-message {
-      margin-top: 20px;
-      font-size: 1.1rem;
-    }
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      header h1  
-}
-      section h2 {
-        font-size: 2rem;
-      }
-      nav ul li {
-        margin: 0 0.5rem;
-      }
-    }
-  </style>
+
     /* Tokenomics Section */
     #tokenomics .tokenomics-container {
       display: flex;
@@ -204,6 +88,7 @@
       font-size: 1rem;
       margin: 8px 0;
     }
+
     /* Roadmap Section */
     #roadmap .timeline {
       position: relative;
@@ -260,12 +145,8 @@
       background: #1e1e1e;
       padding: 20px;
       border-radius: 10px;
-      position: relative;
     }
-    #roadmap .timeline-content h3 {
-      margin-top: 0;
-      color: #ff6f61;
-    }
+    #roadmap .timeline-content h3 { margin-top: 0; color: #ff6f61; }
     #roadmap .timeline-content p {
       margin: 10px 0;
       font-size: 1rem;
@@ -284,10 +165,72 @@
       #roadmap .timeline::after {
         left: 30px;
       }
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+      background: #1e1e1e;
+      padding: 3rem 2rem;
+    }
+    .testimonial {
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .testimonial span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ff6f61;
+    }
+
+    /* Subscription Section */
+    #subscribe {
+      background-color: #1e1e1e;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    #subscribe h2 { font-size: 2rem; margin-bottom: 1rem; }
+    #subscribe p { font-size: 1rem; margin-bottom: 1.5rem; }
+    #subscription-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #subscription-form input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    #subscription-form button {
+      width: 85%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #subscription-form button:hover { background-color: #e65c50; }
+    #response-message { margin-top: 20px; font-size: 1.1rem; }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.5rem; }
+      section h2 { font-size: 2rem; }
+      nav ul li { margin: 0 0.5rem; }
+    }
+  </style>
 </head>
 <body>
   <header>
-       <nav>
+    <nav>
       <ul>
         <li><a href="#intro">Home</a></li>
         <li><a href="#video">Discover</a></li>
