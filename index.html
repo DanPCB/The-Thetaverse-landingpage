@@ -176,34 +176,37 @@
     <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
   </footer>
     <script>
-  // Wait for the DOM to load
+  // Wait until the DOM content is fully loaded
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('subscription-form');
     const responseMessage = document.getElementById('response-message');
 
+    // Listen for form submission
     form.addEventListener('submit', async function(event) {
       event.preventDefault(); // Prevent the default form submission
 
-      // Get the email value from the form
+      // Get the input values from the form
+      const name = form.name.value;
       const email = form.email.value;
+      const phone = form.phone.value;
       
-      // Show a loading message
+      // Display a loading message
       responseMessage.innerText = 'Submitting your subscription...';
 
       try {
-        // Send the POST request to your Netlify function
+        // Send a POST request to the Netlify function endpoint with all fields
         const response = await fetch(form.action, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ email: email })
+          body: JSON.stringify({ name, email, phone })
         });
 
         // Parse the JSON response
         const data = await response.json();
 
-        // Display the response message
+        // Display the response message to the user
         responseMessage.innerText = data.message || 'Subscription successful!';
       } catch (error) {
         console.error('Error:', error);
@@ -212,6 +215,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>
