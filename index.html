@@ -95,6 +95,19 @@
   <footer>
     <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
   </footer>
+  <script>
+    // Example dynamic content: Fetch latest crypto news or updates
+    fetch('https://api.example.com/thetaverse-updates')
+      .then(response => response.json())
+      .then(data => {
+        const contentDiv = document.getElementById('dynamic-content');
+        contentDiv.innerHTML = data.updates.map(update => `<p>${update}</p>`).join('');
+      })
+      .catch(error => {
+        document.getElementById('dynamic-content').innerText = 'Error loading updates.';
+        console.error('Error:', error);
+      });
+  </script>
 </body>
 </html>
 
