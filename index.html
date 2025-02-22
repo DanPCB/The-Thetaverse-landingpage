@@ -159,12 +159,118 @@
   <section id="subscribe">
   <h2>Subscribe to Thetaverse Updates</h2>
   <p>Stay informed about our decentralized AI revolution!</p>
-  <form id="subscription-form" action="/.netlify/functions/subscribe" method="post">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Your email address" required>
-    <input type="tel" name="phone" placeholder="Your phone number" required>
-    <button type="submit" class="cta">Subscribe Now</button>
-  </form>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thetaverse Subscription Form</title>
+  <style>
+    body {
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    #subscribe {
+      background-color: #1e1e1e;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    #subscribe h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #subscribe p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    #subscription-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #subscription-form input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    #subscription-form button {
+      width: 85%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #subscription-form button:hover {
+      background-color: #e65c50;
+    }
+    #response-message {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <section id="subscribe">
+    <h2>Subscribe to Thetaverse Updates</h2>
+    <p>Stay informed about our decentralized AI revolution!</p>
+    <form id="subscription-form" action="/.netlify/functions/subscribe" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+      <button type="submit">Subscribe Now</button>
+    </form>
+    <div id="response-message"></div>
+  </section>
+
+  <script>
+    // Wait until the DOM content is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById('subscription-form');
+      const responseMessage = document.getElementById('response-message');
+
+      // Listen for form submission
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get input values from the form
+        const name = form.name.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+
+        // Display a loading message
+        responseMessage.innerText = 'Submitting your subscription...';
+
+        try {
+          // Send a POST request to your Netlify function
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, phone })
+          });
+
+          // Parse the JSON response
+          const data = await response.json();
+
+          // Display the response message to the user
+          responseMessage.innerText = data.message || 'Subscription successful!';
+        } catch (error) {
+          console.error('Error:', error);
+          responseMessage.innerText = 'An error occurred. Please try again later.';
+        }
+      });
+    });
+  </script>
   <!-- Container for displaying the response message -->
   <div id="response-message" style="margin-top:1rem; font-size: 1.1rem;"></div>
 </section>
