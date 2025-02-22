@@ -1,72 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thetaverse | Decentralized Self-Evolving AGI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thetaverse | Decentralized AI AGI</title>
   <style>
-    /* Base Styles */
+    /* Global Styles */
     body {
       margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #121212;
       color: #f5f5f5;
       line-height: 1.6;
     }
-    header {
+    a {
+      color: #ff6f61;
+      text-decoration: none;
+    }
+    header, footer {
       background: #1e1e1e;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
     }
     header h1 {
+      font-size: 3rem;
       margin: 0;
-      font-size: 2.5rem;
     }
     header p {
       font-size: 1.2rem;
       color: #aaa;
+    }
+    .cta {
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+    .cta:hover {
+      background: #e65c50;
     }
     section {
       padding: 4rem 2rem;
       text-align: center;
     }
     section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
     section p {
-      font-size: 1.1rem;
       max-width: 800px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2rem auto;
+      font-size: 1.1rem;
     }
-    .cta {
-      background: #ff6f61;
-      color: #fff;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
+    /* Video Section */
+    .video-section {
+      background: #000;
+      padding: 2rem 0;
     }
-    .cta:hover {
-      background: #e65c50;
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* Testimonials Section */
+    .testimonials {
+      background: #1e1e1e;
+      padding: 3rem 2rem;
+    }
+    .testimonial {
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .testimonial span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ff6f61;
     }
     footer {
-      background: #1e1e1e;
-      padding: 1rem;
-      text-align: center;
       font-size: 0.9rem;
-      color: #aaa;
     }
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
       section h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
     }
   </style>
@@ -77,6 +111,7 @@
     <p>Decentralized AI System for a Self-Evolving AGI</p>
   </header>
 
+  <!-- Introduction Section -->
   <section>
     <h2>Welcome to Thetaverse</h2>
     <p>
@@ -85,30 +120,43 @@
     <button class="cta">Join the Revolution</button>
   </section>
 
+  <!-- Video Introduction Section -->
+  <section class="video-section">
+    <h2>Discover Thetaverse</h2>
+    <div class="video-container">
+      <!-- Replace the src URL with your own video URL or embed link -->
+      <iframe src="https://sora.com/g/gen_01jmnmh16yfbhbr5239tjhxg4y" title="Introduction Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Community Says</h2>
+    <div class="testimonial">
+      <p>"Thetaverse is revolutionizing the way we think about AI and decentralization. It’s the future of technology!"</p>
+      <span>- Alex, AI Researcher</span>
+    </div>
+    <div class="testimonial">
+      <p>"A groundbreaking project that combines AI and blockchain in a way that truly empowers individuals."</p>
+      <span>- Jordan, Blockchain Enthusiast</span>
+    </div>
+    <div class="testimonial">
+      <p>"I believe Thetaverse will be the catalyst for a new era of self-evolving AGI. Simply amazing!"</p>
+      <span>- Casey, Tech Innovator</span>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
   <section>
-    <h2>Our Vision</h2>
+    <h2>Be Part of the Future</h2>
     <p>
-      At Thetaverse, we believe that by leveraging decentralized computing and AI automation, we can build a global ecosystem where every node contributes to the evolution of a superintelligent, self-improving system—empowering humanity and preserving our planet.
+      Join us in building Thetaverse—a decentralized AI ecosystem that evolves, innovates, and leads the way to a sustainable, intelligent future.
     </p>
+    <button class="cta">Get Started Now</button>
   </section>
 
   <footer>
     <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
   </footer>
-  <script>
-    // Example dynamic content: Fetch latest crypto news or updates
-    fetch('https://api.example.com/thetaverse-updates')
-      .then(response => response.json())
-      .then(data => {
-        const contentDiv = document.getElementById('dynamic-content');
-        contentDiv.innerHTML = data.updates.map(update => `<p>${update}</p>`).join('');
-      })
-      .catch(error => {
-        document.getElementById('dynamic-content').innerText = 'Error loading updates.';
-        console.error('Error:', error);
-      });
-  </script>
 </body>
 </html>
-
-"Add landingpage"
