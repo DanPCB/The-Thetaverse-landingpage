@@ -172,5 +172,43 @@
   <footer>
     <p>&copy; 2025 Thetaverse. All Rights Reserved.</p>
   </footer>
+    <script>
+  // Wait for the DOM to load
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('subscription-form');
+    const responseMessage = document.getElementById('response-message');
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Get the email value from the form
+      const email = form.email.value;
+      
+      // Show a loading message
+      responseMessage.innerText = 'Submitting your subscription...';
+
+      try {
+        // Send the POST request to your Netlify function
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email: email })
+        });
+
+        // Parse the JSON response
+        const data = await response.json();
+
+        // Display the response message
+        responseMessage.innerText = data.message || 'Subscription successful!';
+      } catch (error) {
+        console.error('Error:', error);
+        responseMessage.innerText = 'An error occurred. Please try again later.';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
