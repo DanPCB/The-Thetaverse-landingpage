@@ -160,12 +160,15 @@
   <h2>Subscribe to Thetaverse Updates</h2>
   <p>Stay informed about our decentralized AI revolution!</p>
   <form id="subscription-form" action="/.netlify/functions/subscribe" method="post">
+    <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email address" required>
+    <input type="tel" name="phone" placeholder="Your phone number" required>
     <button type="submit" class="cta">Subscribe Now</button>
   </form>
   <!-- Container for displaying the response message -->
   <div id="response-message" style="margin-top:1rem; font-size: 1.1rem;"></div>
 </section>
+
 
 
 
